@@ -33,8 +33,10 @@ var todoFunctions = {
         if (!Array.isArray(todos)) return "the toDO must be Array";
         if (typeof(newTodo) != 'object') return "the newToDo must be object link { id: 5, description: description, done: false }";
 
-
-
+        newTodo.id = this.generateId();
+        var arr = this.cloneArrayOfObjects(todos);
+        arr.push(newTodo);
+        return arr;
 
     },
     deleteTodo: function(todos, idToDelete) {
