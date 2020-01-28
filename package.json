@@ -1,0 +1,24 @@
+{
+  "name": "To-Do-project-w2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dom.js",
+  "scripts": {
+    "test": "tape  test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-K3/To-Do-project-w2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-K3/To-Do-project-w2/issues"
+  },
+  "homepage": "https://github.com/GSG-K3/To-Do-project-w2#readme",
+  "dependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.13.0"
+  }
+}
