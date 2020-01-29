@@ -1,101 +1,85 @@
-* {
-    margin: 0;
-    padding: 0;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    font-family: "Raleway", sans-serif;
-    font-size: 18px;
-}
 
 .mark {
     /* background-color:blue ; */
     text-decoration: line-through;
+
+}
+#add-todo{
+    
+    display: flex;
+    justify-content:center;
 }
 
-* {
-    padding: 0;
-    margin: 0;
+.title{
+    font-family: cursive;
+    text-align: center;
+    color: rgb(82, 73, 73);
 }
 
-.add-todo__dec {
-    width: 233px;
-}
-
-.todoList {
-    width: 100%;
-    padding: 5px;
-    border-radius: 0.25rem;
-}
-
-.todoList ul {
-    list-style: none;
-}
 
 .todoList ul li {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding: 6px;
+    background-color: snow
 }
 
 .todoList ul li input[type=checkbox] {
     margin: 6px;
     font-size: 17px;
-    width: 19px;
+    width: 20px;
     height: 19px;
 }
 
 .todoList ul li button {
-    background-color: #4CAF50;
+    background-color: rgb(219, 72, 46);
     color: white;
     padding: 14px 23px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 15px;
 }
 
+
+
 .todoList__taskDesc {
-    width: 45%;
+    width: 70%;
     font-size: 20px;
-    padding: 4px 0 0;
+    padding: 3px 0 0 ;
 }
 
 .mainDiv {
-    display: block;
-    flex-direction: column;
+    background-color:rgb(240, 236, 236);
     align-items: center;
     padding: 25px;
-    max-width: 800px;
-    min-width: 300px;
-    width: 80%;
+    margin: 0 20%;
+    
+}
+
+html{
+      background-image: url("backtodo.jpg");
 }
 
 input[type=text],
 select {
-    width: 45%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    width: 50%;
+    margin: 10px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 30px;
     box-sizing: border-box;
 }
 
 input[type=submit] {
     width: 20%;
-    background-color: #4CAF50;
+    background-color: rgb(14, 4, 4);
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
     cursor: pointer;
 }
 
@@ -123,7 +107,7 @@ input[type=submit] {
 @media(min-width: 800px) {
     input[type=text],
     select {
-        height: 42px;
+        height: 47px;
         font-size: 18px;
     }
     input[type=submit] {
