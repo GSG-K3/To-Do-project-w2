@@ -1,7 +1,7 @@
 // part 2 linking it all together
 // The function here is called an iife,
 // it keeps everything inside hidden from the rest of our application
-(function () {
+(function() {
     // This is the dom node where we will keep our todo
     var container = document.getElementById('todo-container');
     var addTodoForm = document.getElementById('add-todo');
@@ -17,22 +17,21 @@
 
 
     // This function takes a todo, it returns the DOM node representing that todo
-    var createTodoNode = function (todo) {
+    var createTodoNode = function(todo) {
         var todoNode = document.createElement('li');
         // you will need to use addEventListener
-        
-        var task = document.getElementsByName('description')[0].value;
-        console.log(task);
+
+        var task = todo.description;
         var textnode = document.createTextNode(task);
         todoNode.appendChild(textnode);
         container.appendChild(todoNode).innerText;
 
-        
+
         // add span holding description
 
         // this adds the delete button
         var deleteButtonNode = document.createElement('button');
-        deleteButtonNode.addEventListener('click', function (event) {
+        deleteButtonNode.addEventListener('click', function(event) {
             var newState = todoFunctions.deleteTodo(state, todo.id);
             update(newState);
         });
@@ -47,7 +46,7 @@
 
     // bind create todo form
     if (addTodoForm) {
-        addTodoForm.addEventListener('submit', function (event) {
+        addTodoForm.addEventListener('submit', function(event) {
             // https://developer.mozilla.org/en-US/docs/Web/Events/submit
             // what does event.preventDefault do?
             // what is inside event.target?
@@ -59,16 +58,16 @@
         });
     }
     // you should not need to change this function
-    var update = function (newState) {
+    var update = function(newState) {
         state = newState;
         renderState(state);
     };
 
     // you do not need to change this function
-    var renderState = function (state) {
+    var renderState = function(state) {
         var todoListNode = document.createElement('ul');
 
-        state.forEach(function (todo) {
+        state.forEach(function(todo) {
             todoListNode.appendChild(createTodoNode(todo));
         });
 
