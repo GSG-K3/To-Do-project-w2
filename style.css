@@ -1,42 +1,43 @@
-*{
-    padding: 0;
-    margin: 0;
+.mark {
+  /* background-color:blue ; */
+
+  text-decoration: line-through;
 }
 
-
-.add-todo__dec{
-    width:233px;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.todoList
-{
-    width: 100%;
-    padding: 5px;
-    border-radius: 0.25rem;
+.add-todo__dec {
+  width: 233px;
+}
+
+.todoList {
+  width: 100%;
+  padding: 5px;
+  border-radius: 0.25rem;
 }
 .todoList ul {
-    list-style: none;
+  list-style: none;
 }
-
 
 .todoList ul li {
-    display: flex;
-    padding: 6px;
+  display: flex;
+  padding: 6px;
 }
 
-.todoList__taskDesc{
-    width: 30%;
+.todoList__taskDesc {
+  width: 30%;
 }
 
+.mainDiv {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
 
-.mainDiv{
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px;
-
-
-    max-width:800px ;
-    min-width: 300px;
-    width: 80%;
+  max-width: 800px;
+  min-width: 300px;
+  width: 80%;
 }
