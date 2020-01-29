@@ -1,7 +1,7 @@
 var test = require('tape');
 var logic = require('./logic');
 
-test('Example test', function(t) {
+test('Example test', function (t) {
     t.equal(1, 1, "the Test Run");
     t.end();
 });
