@@ -40,12 +40,40 @@ var todoFunctions = {
         return arr;
 
     },
-    deleteTodo: function (todos, idToDelete) {
-        // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-        // return a new array, this should not contain any todo with an id of idToDelete
-        // hint: array.filter
+
+    deleteTodo: function(todos, idToDelete) {
+      // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
+      // return a new array, this should not contain any todo with an id of idToDelete
+      // hint: array.filter
+
+      if (todos == undefined || idToDelete == undefined) return "undefind data";
+      if (!(Array.isArray(todos))) return "It is not array";
+      if (!(Number.isInteger(idToDelete))) return "Invalid input ID";
+  
+      if (todos.length == 0) return "It is Empty";
+  
+  
+      let array = this.cloneArrayOfObjects(todos);
+  
+      let newArr = array.filter(
+        function (item) {
+          if (item.id != idToDelete) {
+            return true;
+          }
+        });
+      console.log(newArr);
+  
+      // if two Array lenth is equal then the idToDelete not found in array
+      if (newArr.length == array.length) {
+        return "The task does not exist";
+      }
+  
+      // return new Array after delete item
+      return newArr;
+  
     },
-    markTodo: function (todos, idToMark) {
+
+    markTodo: function(todos, idToMark) {
         // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
         // in the new todo array, all elements will remain unchanged except the one with id: idToMark
         // this element will have its done value toggled
