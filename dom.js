@@ -21,8 +21,25 @@
         var todoNode = document.createElement('li');
         // you will need to use addEventListener
         
-        var task = document.getElementsByName('description')[0].value;
-        console.log(task);
+        // add markTodo button
+        var checkBoxNode = document.createElement('input');
+        checkBoxNode.type ='checkbox';
+        checkBoxNode.addEventListener('change',function(event){
+        let newState = todoFunctions.markTodo(state, todo.id);
+            
+           update(newState);
+           
+        });
+        
+        if(todo.done == true)
+        {
+            checkBoxNode.checked= true;
+            todoNode.classList.add("mark");
+        }
+        todoNode.appendChild(checkBoxNode);
+
+
+        var task = todo.description;
         var textnode = document.createTextNode(task);
         todoNode.appendChild(textnode);
         container.appendChild(todoNode).innerText;
@@ -38,12 +55,17 @@
         });
         todoNode.appendChild(deleteButtonNode);
 
-        // add markTodo button
+        
+
+
+        
 
         // add classes for css
 
         return todoNode;
     };
+
+    
 
     // bind create todo form
     if (addTodoForm) {
