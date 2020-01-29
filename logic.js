@@ -5,7 +5,7 @@
 var todoFunctions = {
     // todoFunctions.generateId() will give you a unique id
     // You do not need to understand the implementation of this function.
-    generateId: (function() {
+    generateId: (function () {
         var idCounter = 0;
 
         function incrementCounter() {
@@ -17,13 +17,13 @@ var todoFunctions = {
 
     //cloneArrayOfObjects will create a copy of the todos array 
     //changes to the new array don't affect the original
-    cloneArrayOfObjects: function(todos) {
-        return todos.map(function(todo) {
+    cloneArrayOfObjects: function (todos) {
+        return todos.map(function (todo) {
             return JSON.parse(JSON.stringify(todo));
         });
     },
 
-    addTodo: function(todos, newTodo) {
+    addTodo: function (todos, newTodo) {
         // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
         // returns a new array, it should contain todos with the newTodo added to the end.
         // add an id to the newTodo. You can use the generateId function to create an id.
@@ -31,11 +31,12 @@ var todoFunctions = {
 
         if (todos == undefined || newTodo == undefined) return "the parameter can not be undefined";
         if (!Array.isArray(todos)) return "the toDO must be Array";
-        if (typeof(newTodo) != 'object') return "the newToDo must be object link { id: 5, description: description, done: false }";
+        if (typeof (newTodo) != 'object') return "the newToDo must be object link { id: 5, description: description, done: false }";
 
         newTodo.id = this.generateId();
         var arr = this.cloneArrayOfObjects(todos);
         arr.push(newTodo);
+        console.log(arr);
         return arr;
 
     },
@@ -78,7 +79,7 @@ var todoFunctions = {
         // this element will have its done value toggled
         // hint: array.map
     },
-    sortTodos: function(todos, sortFunction) {
+    sortTodos: function (todos, sortFunction) {
         // stretch goal! Do this last
         // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
         // sortFunction will have same signature as the sort function in array.sort
