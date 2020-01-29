@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.add-todo__dec{
+    width:233px;
+}
+
+.todoList
+{
+    width: 100%;
+    padding: 5px;
+    border-radius: 0.25rem;
+}
+.todoList ul {
+    list-style: none;
+}
+
+
+.todoList ul li {
+    display: flex;
+    padding: 6px;
+}
+
+.todoList__taskDesc{
+    width: 30%;
+}
+
+
+.mainDiv{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+
+
+    max-width:800px ;
+    min-width: 300px;
+    width: 80%;
+}
