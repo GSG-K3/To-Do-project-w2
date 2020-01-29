@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+}
+
+.mark {
+    /* background-color:blue ; */
+    text-decoration: line-through;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.add-todo__dec {
+    width: 233px;
+}
+
+.todoList {
+    width: 100%;
+    padding: 5px;
+    border-radius: 0.25rem;
+}
+
+.todoList ul {
+    list-style: none;
+}
+
+.todoList ul li {
+    display: flex;
+    padding: 6px;
+}
+
+.todoList ul li input[type=checkbox] {
+    margin: 6px;
+    font-size: 17px;
+    width: 19px;
+    height: 19px;
+}
+
+.todoList ul li button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 23px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.todoList__taskDesc {
+    width: 45%;
+    font-size: 20px;
+    padding: 4px 0 0;
+}
+
+.mainDiv {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    max-width: 800px;
+    min-width: 300px;
+    width: 80%;
+}
+
+input[type=text],
+select {
+    width: 45%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media(max-width:799px) {
+    input[type=text] {
+        height: 75px;
+        font-size: 30px;
+    }
+    input[type=submit] {
+        height: 75px;
+        font-size: 30px;
+    }
+    .todoList ul li input[type=checkbox] {
+        margin: 6px;
+        font-size: 17px;
+        width: 19px;
+        height: 19px;
+    }
+    .todoList__taskDesc {
+        font-size: 20px;
+        padding: 4px 0 0;
+    }
+}
+
+@media(min-width: 800px) {
+    input[type=text],
+    select {
+        height: 42px;
+        font-size: 18px;
+    }
+    input[type=submit] {
+        height: 47px;
+        font-size: 18px;
+    }
+}

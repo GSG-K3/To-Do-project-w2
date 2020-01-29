@@ -22,25 +22,43 @@
         // you will need to use addEventListener
 
         var task = todo.description;
-        var textnode = document.createTextNode(task);
+        // add markTodo button
+        var checkBoxNode = document.createElement('input');
+        checkBoxNode.type = 'checkbox';
+        checkBoxNode.addEventListener('change', function(event) {
+            let newState = todoFunctions.markTodo(state, todo.id);
+            update(newState);
+        });
+
+        if (todo.done == true) {
+            checkBoxNode.checked = true;
+            todoNode.classList.add("mark");
+        }
+        todoNode.appendChild(checkBoxNode);
+
+
+        // var task = todo.description;
+        //var textnode = document.createTextNode(task);
+        var task = todo.description;
+        var textnode = document.createElement('div'); //document.createTextNode(task);
+        textnode.classList.add("todoList__taskDesc");
+        textnode.innerHTML = task;
         todoNode.appendChild(textnode);
-        container.appendChild(todoNode).innerText;
+
 
 
         // add span holding description
 
         // this adds the delete button
+        var btnDiv = document.createElement('div');
         var deleteButtonNode = document.createElement('button');
+        deleteButtonNode.innerText = "delete"
         deleteButtonNode.addEventListener('click', function(event) {
             var newState = todoFunctions.deleteTodo(state, todo.id);
             update(newState);
         });
-        todoNode.appendChild(deleteButtonNode);
-
-        // add markTodo button
-
-        // add classes for css
-
+        btnDiv.appendChild(deleteButtonNode)
+        todoNode.appendChild(btnDiv);
         return todoNode;
     };
 
@@ -52,8 +70,14 @@
             // what is inside event.target?
             event.preventDefault();
             var desc = event.target.elements["description"].value;
+            if (desc.trim().length == 0) {
+                alert("please add task description")
+                event.target.elements["description"].value = "";
+                return;
+            }
             var taske = { id: 0, description: desc, done: false };
             var newState = todoFunctions.addTodo(state, taske);
+            event.target.elements["description"].value = "";
             update(newState);
         });
     }
