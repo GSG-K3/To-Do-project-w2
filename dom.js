@@ -9,9 +9,9 @@
 
 
     var state = [
-        // { id: -3, description: 'first todo' },
-        // { id: -2, description: 'second todo' },
-        // { id: -1, description: 'third todo' },
+        { id: -3, description: 'first todo' },
+        { id: -2, description: 'second todo' },
+        { id: -1, description: 'third todo' },
     ]; // this is our initial todoList
 
 
@@ -21,22 +21,29 @@
         var todoNode = document.createElement('li');
         // you will need to use addEventListener
         
-        var task = document.getElementsByName('description')[0].value;
-        console.log(task);
-        var textnode = document.createTextNode(task);
+        var task = todo.description;
+        var textnode =document.createElement('div'); //document.createTextNode(task);
+        textnode.classList.add("todoList__taskDesc");
+        textnode.innerHTML = task;
+        
         todoNode.appendChild(textnode);
-        container.appendChild(todoNode).innerText;
+        
+        //container.appendChild(todoNode).innerText;
 
         
         // add span holding description
 
         // this adds the delete button
+
+       var btnDiv =document.createElement('div'); 
         var deleteButtonNode = document.createElement('button');
+        deleteButtonNode.innerText ="delete"
         deleteButtonNode.addEventListener('click', function (event) {
             var newState = todoFunctions.deleteTodo(state, todo.id);
             update(newState);
         });
-        todoNode.appendChild(deleteButtonNode);
+        btnDiv.appendChild(deleteButtonNode)
+        todoNode.appendChild(btnDiv);
 
         // add markTodo button
 
