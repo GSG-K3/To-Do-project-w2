@@ -44,17 +44,32 @@ var todoFunctions = {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // return a new array, this should not contain any todo with an id of idToDelete
       // hint: array.filter
-      if(Array.isArray(todos)){
-        //return "it is Array";
-        if(todos.length ==0)
-        {return "the array is empty"; 
 
-        }
+      if (todos == undefined || idToDelete == undefined) return "undefind data";
+      if (!(Array.isArray(todos))) return "It is not array";
+      if (!(Number.isInteger(idToDelete))) return "Invalid input ID";
+  
+      if (todos.length == 0) return "It is Empty";
+  
+  
+      let array = this.cloneArrayOfObjects(todos);
+  
+      let newArr = array.filter(
+        function (item) {
+          if (item.id != idToDelete) {
+            return true;
+          }
+        });
+      console.log(newArr);
+  
+      // if two Array lenth is equal then the idToDelete not found in array
+      if (newArr.length == array.length) {
+        return "The task does not exist";
       }
-      
-      else{
-        return "it is not array"; 
-      }
+  
+      // return new Array after delete item
+      return newArr;
+  
     },
 
     markTodo: function(todos, idToMark) {
