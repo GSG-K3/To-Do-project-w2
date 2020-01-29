@@ -9,9 +9,9 @@
 
 
     var state = [
-        // { id: -3, description: 'first todo' },
-        // { id: -2, description: 'second todo' },
-        // { id: -1, description: 'third todo' },
+        { id: -3, description: 'first todo' },
+        { id: -2, description: 'second todo' },
+        { id: -1, description: 'third todo' },
     ]; // this is our initial todoList
 
 
@@ -39,21 +39,31 @@
         todoNode.appendChild(checkBoxNode);
 
 
+       // var task = todo.description;
+        //var textnode = document.createTextNode(task);
         var task = todo.description;
-        var textnode = document.createTextNode(task);
+        var textnode =document.createElement('div'); //document.createTextNode(task);
+        textnode.classList.add("todoList__taskDesc");
+        textnode.innerHTML = task;
+        
         todoNode.appendChild(textnode);
-        container.appendChild(todoNode).innerText;
+        
+        //container.appendChild(todoNode).innerText;
 
         
         // add span holding description
 
         // this adds the delete button
+
+       var btnDiv =document.createElement('div'); 
         var deleteButtonNode = document.createElement('button');
+        deleteButtonNode.innerText ="delete"
         deleteButtonNode.addEventListener('click', function (event) {
             var newState = todoFunctions.deleteTodo(state, todo.id);
             update(newState);
         });
-        todoNode.appendChild(deleteButtonNode);
+        btnDiv.appendChild(deleteButtonNode)
+        todoNode.appendChild(btnDiv);
 
         
 
