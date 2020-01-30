@@ -1,7 +1,7 @@
 var test = require('tape');
 var logic = require('./logic');
 
-test('Delete Test ', function(t) {
+test('Delete Test ', function (t) {
     let arr = [
         { id: 0, description: 'make tea', done: false },
         { id: 1, description: 'make eggs', done: true }
@@ -15,8 +15,6 @@ test('Delete Test ', function(t) {
     t.end();
 });
 
-
-
 // Test generate id
 test("Test generate id", x => {
     x.equal(logic.generateId(), 1, "The id is not unique");
@@ -25,7 +23,6 @@ test("Test generate id", x => {
     x.equal(logic.generateId(), 4, "The id is not unique");
     x.end();
 });
-
 //Test Of Add
 test("Test Add ", t => {
     t.equal(logic.addTodo(), "the parameter can not be undefined");
@@ -36,7 +33,7 @@ test("Test Add ", t => {
     t.end();
 });
 //Test of Complete
-test('Complete Test ', function(t) {
+test('Complete Test ', function (t) {
     let arr = [
         { id: 0, description: 'make tea', done: false },
         { id: 1, description: 'make eggs', done: true }
@@ -45,6 +42,6 @@ test('Complete Test ', function(t) {
     t.equal(logic.markTodo("", 1), "It is not array", 'This is not array')
     t.equal(logic.markTodo([], ""), "Invalid input ID", 'It is not an integer')
     t.equal(logic.markTodo([], 1), "It is Empty", ' you are trying to delete empty array')
-    t.deepEqual(logic.markTodo(arr, 0), "The task does not exist", "you are trying to delet not found task");
+    t.equal(logic.markTodo(arr, 0), "The task does not exist", "you are trying to delet not found task");
     t.end();
 });
