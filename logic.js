@@ -53,9 +53,9 @@ var todoFunctions = {
         if (todos.length === 0) return "It is Empty";
 
 
-        let array = this.cloneArrayOfObjects(todos);
+        const array = this.cloneArrayOfObjects(todos);
 
-        let newArr = array.filter(
+        const newArr = array.filter(
             function (item) {
                 if (item.id != idToDelete) {
                     return true;

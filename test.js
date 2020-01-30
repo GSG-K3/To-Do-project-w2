@@ -15,8 +15,6 @@ test('Delete Test ', function (t) {
     t.end();
 });
 
-
-
 // Test generate id
 test("Test generate id", x => {
     x.equal(logic.generateId(), 1, "The id is not unique");
@@ -25,7 +23,6 @@ test("Test generate id", x => {
     x.equal(logic.generateId(), 4, "The id is not unique");
     x.end();
 });
-
 //Test Of Add
 test("Test Add ", t => {
     t.equal(logic.addTodo(), "the parameter can not be undefined");

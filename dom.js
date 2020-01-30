@@ -8,7 +8,7 @@
     var state = []; // this is our initial todoList
     var createTodoNode = function (todo) {
         let todoNode = document.createElement('li');
-         let task = todo.description;
+        
         let checkBoxNode = document.createElement('input');
         checkBoxNode.type = 'checkbox';
         checkBoxNode.setAttribute("name", `mark${todo.id}`);
